@@ -1,6 +1,7 @@
 package staffactivitytrackingsystem.app.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +39,7 @@ public class DataProcessing {
      * @param directoryname
      * Method which reads data form directory and also saves it in the MongoDB
      */
-    public void processdata(String directoryname){
+    public Boolean processdata(String directoryname){
         JSONParser jsonParser=new JSONParser();
 
         //Getting all the files in the ActivitiesToProcess directory in a List
@@ -66,6 +67,8 @@ public class DataProcessing {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+
+        return true;
     }
 
     private  Staff saveToDatabase(Staff s){

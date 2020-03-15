@@ -22,8 +22,16 @@ public class MainController {
 @Autowired
 private DataProcessing dataProcessing;
     @GetMapping("/getdatafrom")
-    public void test(){
-    dataProcessing.processdata("ActivitiesToProcess");
+    public String test(){
+        /**
+         * If the folder is located else where change the directory reference below
+         */
+       if(dataProcessing.processdata("ActivitiesToProcess"))//reference
+        {
+            return "Data Loaded";
+        }
+
+        return "Data not loaded . Please check stacktrace";
 
 }
 
