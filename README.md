@@ -26,3 +26,13 @@ where 1030 represents time 10:30 am
 other dumy values are considered where every necessarry
 
 ```
+
+## Some points to consider
+
+```bash
+1)The Activities folder is referenced MainController in the method test()
+if you want to change the reference , you can do so from there
+2)If the satff has not activities today , their activities won't be displayed as said
+
+
+```
